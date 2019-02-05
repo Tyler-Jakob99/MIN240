@@ -1,30 +1,101 @@
 <html>
-<head> </head>
-<style>
-  body{
-   margin:0;
-  }
-  
-div {
-  
-  position:absolute;
-  
-  margin: 0px;
-  padding: 5px;
-  
-  
-  left:5vw;
-  top:5ch;
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    </head>
     
-  width: 90vw;
-  height:90vh;
-  
-background-color: cyan;
-  }
-</style>
-<body>
-  
-  <div> Hello </div>
-  
-</body>
+    <style>
+        body{
+            background-image: url("wireframe.jpg");
+            background-repeat:no-repeat;
+            background-size: contain;
+        }    
+        
+        #title {
+            position: absolute;
+            margin: 0px;
+            padding: 5px;
+            
+            left:6.5vw;
+            top:5.1vh;
+            
+            width:85.2vw;
+            height:13.1vh;
+            
+            background-color:cyan;
+            
+        }
+        
+        div{
+            position:absolute;
+            margin: 0px;
+            padding: 0px;
+            
+            left:7vw;
+            top:3ch;
+            
+            width: 90vw;
+            height:90vh;
+            font-family: 'Inconsolata', monospace;
+            font-size:25px
+        }
+        
+        #rabbit {
+            position: absolute;
+            margin: 0px;
+            padding: 5px;
+            
+            left:6.5vw;
+            top:25vh;
+            
+            width:22.7vw;
+            height:27.8vh;
+            
+            background-image: url("rabbit.jpg");
+            background-size: cover;
+        }
+        
+        #light {
+            position: absolute;
+            margin: 0px;
+            padding: 5px;
+            
+            left:37.9vw;
+            top:25vh;
+            
+            width:22.5vw;
+            height:27.8vh;
+            
+            /*background-color:gray;*/
+            background-image: url("light.jpg");
+            background-size: cover;
+        }
+        
+        #titans {
+            position: absolute;
+            margin: 0px;
+            padding: 5px;
+            
+            left:69vw;
+            top:25.2vh;
+            
+            width:23vw;
+            height:27.8vh;
+            
+            background-image: url("titans.jpg");
+            background-size: cover;
+        }
+        
+        
+    </style>
+    
+    <body>
+        <div id="rabbit"></div>
+        <div id="light"></div>
+        <div id="titans"></div>
+        <div id="title"></div>
+        <div>Tyler's Favorite Things: 
+        <br> My favorite object is a glass rabbit, my favorite game is Child of Light, and my favorite movie is Remember the Titans.
+        </div>
+    </body>
+    
 </html>
