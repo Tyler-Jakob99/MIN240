@@ -1,0 +1,166 @@
+<html> 
+<head> </head>
+    
+<style>
+    #globe{
+        position:absolute;
+        margin:0px;
+        padding: 0px;
+        background-image:url("snow.jpg");
+        background-size:cover;
+        left:25vw;
+        top:25vh;
+            
+        width:50vw;
+        height:50vh;
+        background-color:white;
+        border-style:solid;
+        border-radius:50%;
+    } 
+    #base{
+        position:absolute;
+        margin:0px;
+        padding:5px;
+        
+        left:29.6vw;
+        top: 70vh;
+        
+        width:40vw;
+        height:15vh;
+        border-radius:5%;
+        
+        background-color:black;
+    }
+    #bottom{
+        position:absolute;
+        margin:0px;
+        padding:0px;
+        
+        left:30vw;
+        top:51vh;
+        
+        width:5vw;
+        height:5vh;
+        
+        background-color:white;
+        border-style:solid;
+        border-radius:50%;
+        animation:jump5 5s infinite;
+    }
+    #middle{
+        position:absolute;
+        margin:0px;
+        padding:0px;
+        
+        left:30.4vw;
+        top:47.5vh;
+        
+        width:4vw;
+        height:4vh;
+        
+        background-color:white;
+        border-style:solid;
+        border-radius:50%;
+        animation:jump4 5s infinite;
+    }
+    #top{
+        position:absolute;
+        margin:0px;
+        padding:0px;
+        
+        left:30.9vw;
+        top:45vh;
+        
+        width:3vw;
+        height:3vh;
+        
+        background-color:white;
+        border-style:solid;
+        border-radius:50%;
+        animation:jump1 5.2s infinite;
+    }
+    #eye1{
+        position:absolute;
+        margin:0px;
+        padding:0px;
+        
+        left:31.6vw;
+        top:46vh;
+        
+        width:1vw;
+        height:1vh;
+        
+        background-color:black;
+        border-radius:50%;
+        animation:jump2 5.2s infinite;
+    }
+    #eye2{
+        position:absolute;
+        margin:0px;
+        padding:0px;
+        
+        left:33vw;
+        top:46vh;
+        
+        width:1vw;
+        height:1vh;
+        
+        background-color:black;
+        border-radius:50%;
+        animation:jump2 5.2s infinite;
+    }
+    #mouth{
+        position:absolute;
+        margin:0px;
+        padding:0px;
+        
+        left:31.8vw;
+        top:47.1vh;
+        
+        width:2vw;
+        height:1vh;
+        
+        background-color:black;
+        border-radius:50%;
+        animation:jump3 5.2s infinite;
+    }
+    @keyframes jump1{
+        from{top:45vh}
+        50%{top:40vh}
+        to{top:45vh}
+    }
+    @keyframes jump2{
+        from{top:46vh}
+        50%{top:41vh}
+        to{top:46vh}
+        
+    }
+    @keyframes jump3{
+        from{top:47.1vh}
+        50%{top:42.1vh}
+        to{top:47.1vh}
+        
+    }
+    @keyframes jump4{
+        from{top:47.5vh}
+        50%{top:44vh}
+        to{top:47.5vh}
+    }
+    @keyframes jump5{
+        from{top:51vh}
+        50%{top:48vh}
+        to{top:51vh}
+    }
+    
+</style>
+<body> 
+<div id="globe"></div>
+<div id="base"></div>
+<div id="bottom"></div>
+<div id="middle"></div>
+<div id="top"></div>
+<div id="eye1"></div>
+<div id="eye2"></div>
+<div id="mouth"></div>
+</body>
+</html>
