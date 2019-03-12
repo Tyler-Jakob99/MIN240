@@ -1,46 +1,180 @@
-<!doctype html>
 <html>
 <style>
-    #ballerina { /* #1. correct the code for ID */
-        width: 118px;
-        height: 130px;
-        margin: auto;
-
-        background-image: url("https://previews.123rf.com/images/kathygold/kathygold1009/kathygold100900068/7730727-african-american-ballerina-silhouette-on-a-white-background.jpg"); 
-/* #2. correct the code to make the image shown*/
-
-        background-size:contain;
-/* #3. correct the code to show the ballerina fit into the given width and height*/
-
-        transform-origin: 60% 0%; 
-        animation: 
-        turn1 2s 1, /* #4. Let the ballerina turn once duration two seconds by getting faster */
-        
-        turn2 .5s 10, /* #5. After the first turn, let the ballerina turn 10 times duration 0.5 seconds without any acceleration */
-        
-        turn3 2s 1, /* #6. After then, let the ballerina turn once more slowly duration two seconds by getting slower */
-        
-        fade_out_in 2s 1; / /*#7. after all the turn done, show the ballerina in fade out and fade in */
-}
+    #startScreen {
+        position:absolute;
+        top:30vh;
+        left:10vw;
+        width:80vw;
+        height:40vh;
+        background-color:darkblue;
+    }
     
-    @keyframes turn1 {
-        from{transform: rotateY(0);}
-        to{transform: rotateY(360);} /* #8. make the ballerina turn one round */
-}
+    #gameScreen {
+        position:absolute;
+        top:5vh;
+        left:5vw;
+        width:90vw;
+        height:90vh;
+        background-image: url("tree.jpg");
+        background-size:cover;
+        display:none;
+    }
     
-    @keyframes turn2 {
-        from{transform: rotateY(0);}
-        to{transform: rotateY(360);}
-}
-    @keyframes turn3 {
-        from{transform: rotateY(0);}
-        to{transform: rotateY(360);}
-}
-                
-    </style>
+    #endScreen {
+        position:absolute;
+        top:30vh;
+        left:10vw;
+        width:80vw;
+        height:40vh;
+        background-color:black;
+        display:none;
+    }
+    
+    #startBTN {
+        position:absolute;
+        top:43%;
+        left:20%;
+        width:60%;
+        height:15%;
+        background-color:darkorange;
+        cursor:pointer;
+        user-select:none;
+    }
+    #butterfly {
+        position:absolute;
+        top:30%;
+        left:45%;
+        width:10%;
+        height:10%;
+        background-image: url("butterfly.jpg");
+        border-radius:50%;
+        background-size:cover;
+        cursor:pointer;
+    }
+    #instruction {
+        position:absolute;
+        top:0%;
+        left:0%;
+        width:30%;
+        height:10%;
+        user-select:none;
+    }
+    #endBTN {
+        position:absolute;
+        top:100%;
+        left:90%;
+        width:15%;
+        height:5%;
+        background-color:darkorange;
+        cursor:pointer;
+        user-select:none;
+    }
+    #thanks{
+        position:absolute;
+        top:10%;
+        left:5%;
+        width:90%;
+        height:80%;
+        background-color:white;
+    }
+    #reset{
+        position:absolute;
+        top:80%;
+        left:65%;
+        width:30%;
+        height:10%;
+        background-color:darkorange;
+        cursor:pointer;
+    }
+</style>
 <body>
-<div id="ballerina">
-    </div>
-</body>
+<div id="beginning"></div>
+    <div id="instruction">Make the Butterfly Fly Away</div>
+<div id="startScreen"></div>
+    <div id="startBTN">Start</div>
+<div id="gameScreen">
+    <div id="butterfly"></div>
+    <div id="endBTN">End</div></div>
+<div id="endScreen">
+    <div id="thanks">Thank you for Playing!</div>
+    <div id="reset">Reset Game</div></div>
+
+<script>
+    var myBeginning;
+    myStartScreen=document.querySelector("#beginning");
     
+    var myStartScreen;
+    myStartScreen=document.querySelector("#startScreen");
+    
+    var myGameScreen;
+    myGameScreen=document.querySelector("#gameScreen");
+    
+    var myStartBTN;
+    myStartBTN=document.querySelector("#startBTN");
+    
+    var myEndScreen;
+    myEndScreen=document.querySelector("#EndScreen");
+    
+    var myEndBTN;
+    myEndBTN=document.querySelector("#endBTN");
+    
+    var myThanks;
+    myThanks=document.querySelector("#Thanks");
+    
+    var myReset;
+    myReset=document.querySelector("#Reset");
+    
+    myStartBTN.style.fontSize="3em";
+    myStartBTN.style.textAlign="center";
+    
+    var myButterfly;
+    myButterfly=document.querySelector("#butterfly");
+    myButterfly.addEventListener("click",shakeButterfly, false);
+    
+    myStartBTN.addEventListener("click", hideStartShowGame, false);
+    
+    var myButterfly;
+    myButterfly=document.querySelector("#Butterfly");
+    
+    var myPositionY=0;
+    function shakeButterfly(){
+        myPositionY=myPositionY-20;
+        //make the butterfly go up
+        //css, transform: translate(20%);
+        //in js. myWater.style.transform="translate(20%)";
+        //where is the water
+        
+        myButterfly.style.transform="translateY("+myPositionY+"%)";
+    }
+    
+    myEndBTN.style.fontSize="2em";
+    myEndBTN.style.textAlign="center";
+    
+    myEndBTN.addEventListener("click",hideGameShowEnd,false);
+    
+    myThanks.style.fontSize="3em";
+    myThanks.style.textAlign="center";
+    
+    myReset.style.fontSize="2em";
+    myReset.style.textAlign="center";
+    
+    myReset.addEventListener("click",hideEndShowStart,false);
+    
+    function hideStartShowGame() {
+        myStartScreen.style.display="none";
+        myGameScreen.style.display="block";
+    }
+    
+    function hideGameShowEnd(){
+        myGameScreen.style.display="none";
+        myEndScreen.style.display="block";
+    }
+    
+    function hideEndShowStart(){
+        myEndScreen.style.display="none";
+        myStartScreen.style.display="block";
+    }
+</script>
+</body>
 </html>
+    
