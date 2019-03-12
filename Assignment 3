@@ -1,0 +1,180 @@
+<html>
+<style>
+    #startScreen {
+        position:absolute;
+        top:30vh;
+        left:10vw;
+        width:80vw;
+        height:40vh;
+        background-color:darkblue;
+    }
+    
+    #gameScreen {
+        position:absolute;
+        top:5vh;
+        left:5vw;
+        width:90vw;
+        height:90vh;
+        background-image: url("tree.jpg");
+        background-size:cover;
+        display:none;
+    }
+    
+    #endScreen {
+        position:absolute;
+        top:30vh;
+        left:10vw;
+        width:80vw;
+        height:40vh;
+        background-color:black;
+        display:none;
+    }
+    
+    #startBTN {
+        position:absolute;
+        top:43%;
+        left:20%;
+        width:60%;
+        height:15%;
+        background-color:darkorange;
+        cursor:pointer;
+        user-select:none;
+    }
+    #butterfly {
+        position:absolute;
+        top:30%;
+        left:45%;
+        width:10%;
+        height:10%;
+        background-image: url("butterfly.jpg");
+        border-radius:50%;
+        background-size:cover;
+        cursor:pointer;
+    }
+    #instruction {
+        position:absolute;
+        top:0%;
+        left:0%;
+        width:30%;
+        height:10%;
+        user-select:none;
+    }
+    #endBTN {
+        position:absolute;
+        top:100%;
+        left:90%;
+        width:15%;
+        height:5%;
+        background-color:darkorange;
+        cursor:pointer;
+        user-select:none;
+    }
+    #thanks{
+        position:absolute;
+        top:10%;
+        left:5%;
+        width:90%;
+        height:80%;
+        background-color:white;
+    }
+    #reset{
+        position:absolute;
+        top:80%;
+        left:65%;
+        width:30%;
+        height:10%;
+        background-color:darkorange;
+        cursor:pointer;
+    }
+</style>
+<body>
+<div id="beginning"></div>
+    <div id="instruction">Make the Butterfly Fly Away</div>
+<div id="startScreen"></div>
+    <div id="startBTN">Start</div>
+<div id="gameScreen">
+    <div id="butterfly"></div>
+    <div id="endBTN">End</div></div>
+<div id="endScreen">
+    <div id="thanks">Thank you for Playing!</div>
+    <div id="reset">Reset Game</div></div>
+
+<script>
+    var myBeginning;
+    myStartScreen=document.querySelector("#beginning");
+    
+    var myStartScreen;
+    myStartScreen=document.querySelector("#startScreen");
+    
+    var myGameScreen;
+    myGameScreen=document.querySelector("#gameScreen");
+    
+    var myStartBTN;
+    myStartBTN=document.querySelector("#startBTN");
+    
+    var myEndScreen;
+    myEndScreen=document.querySelector("#EndScreen");
+    
+    var myEndBTN;
+    myEndBTN=document.querySelector("#endBTN");
+    
+    var myThanks;
+    myThanks=document.querySelector("#Thanks");
+    
+    var myReset;
+    myReset=document.querySelector("#Reset");
+    
+    myStartBTN.style.fontSize="3em";
+    myStartBTN.style.textAlign="center";
+    
+    var myButterfly;
+    myButterfly=document.querySelector("#butterfly");
+    myButterfly.addEventListener("click",shakeButterfly, false);
+    
+    myStartBTN.addEventListener("click", hideStartShowGame, false);
+    
+    var myButterfly;
+    myButterfly=document.querySelector("#Butterfly");
+    
+    var myPositionY=0;
+    function shakeButterfly(){
+        myPositionY=myPositionY-20;
+        //make the butterfly go up
+        //css, transform: translate(20%);
+        //in js. myWater.style.transform="translate(20%)";
+        //where is the water
+        
+        myButterfly.style.transform="translateY("+myPositionY+"%)";
+    }
+    
+    myEndBTN.style.fontSize="2em";
+    myEndBTN.style.textAlign="center";
+    
+    myEndBTN.addEventListener("click",hideGameShowEnd,false);
+    
+    myThanks.style.fontSize="3em";
+    myThanks.style.textAlign="center";
+    
+    myReset.style.fontSize="2em";
+    myReset.style.textAlign="center";
+    
+    myReset.addEventListener("click",hideEndShowStart,false);
+    
+    function hideStartShowGame() {
+        myStartScreen.style.display="none";
+        myGameScreen.style.display="block";
+    }
+    
+    function hideGameShowEnd(){
+        myGameScreen.style.display="none";
+        myEndScreen.style.display="block";
+    }
+    
+    function hideEndShowStart(){
+        myEndScreen.style.display="none";
+        myStartScreen.style.display="block";
+    }
+</script>
+</body>
+</html>
+    
